@@ -1,0 +1,719 @@
+```html
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Husnida onajonimga ❤️</title>
+
+<style>
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #fff5ef;
+    background: linear-gradient(145deg, #16071f, #652447, #28103c);
+    overflow-x: hidden;
+}
+
+#sky {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    color: #ffe7ae;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .2; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1.3); }
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    width: min(92%, 850px);
+    margin: auto;
+}
+
+.hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 5px;
+}
+
+.eyebrow {
+    font: 11px Arial, sans-serif;
+    letter-spacing: 4px;
+    color: #ffe1a4;
+}
+
+h1 {
+    font-size: clamp(38px, 9vw, 75px);
+    line-height: 1.18;
+    color: #ffd0e5;
+    text-shadow: 0 0 30px #ff75b8;
+    margin: 24px 0;
+}
+
+h1 span {
+    display: block;
+    color: #ffe4ab;
+    font-style: italic;
+}
+
+h2 {
+    color: #ffe2a8;
+    font-size: clamp(25px, 6vw, 38px);
+    line-height: 1.4;
+}
+
+h3 {
+    color: #ffd4e9;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.95;
+}
+
+.flower {
+    font-size: clamp(65px, 17vw, 105px);
+    filter: drop-shadow(0 0 20px #ff78b5);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50% { transform: translateY(-15px) rotate(4deg); }
+}
+
+.btn {
+    border: 1px solid #ffffff30;
+    border-radius: 40px;
+    padding: 14px 22px;
+    margin: 9px 4px;
+    background: linear-gradient(100deg, #ff599b, #a84bdf);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .25s;
+    max-width: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 25px #ff6da555;
+}
+
+section {
+    padding: 55px 0;
+    text-align: center;
+}
+
+.sub {
+    color: #f3ccdf;
+    margin-bottom: 30px;
+}
+
+.card {
+    padding: clamp(20px, 5vw, 38px);
+    margin: 22px 0;
+    background: #ffffff0c;
+    border: 1px solid #ffffff25;
+    border-radius: 25px;
+    box-shadow: 0 12px 40px #00000015;
+    backdrop-filter: blur(8px);
+}
+
+.letter {
+    text-align: left;
+    line-height: 2.1;
+}
+
+.letter p {
+    font-size: 17px;
+    margin: 17px 0;
+}
+
+.signature {
+    text-align: right;
+    color: #ffe2a8;
+    font-size: 22px !important;
+    font-style: italic;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.tile {
+    padding: 22px 13px;
+    border: 1px solid #ffffff20;
+    border-radius: 20px;
+    background: #ffffff0b;
+    transition: .3s;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    background: #ffffff16;
+}
+
+.tile .emoji {
+    font-size: 39px;
+}
+
+.tile h3 {
+    font-size: 19px;
+    margin: 12px 0 5px;
+}
+
+.tile p {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.garden {
+    font-size: clamp(30px, 7vw, 47px);
+    line-height: 2.1;
+    word-spacing: 7px;
+}
+
+.big-heart {
+    font-size: 85px;
+    animation: heartbeat 1.4s infinite;
+    filter: drop-shadow(0 0 20px #ff5295);
+    margin: 20px;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.14); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.08); }
+}
+
+.quote {
+    color: #ffe1b1;
+    font-size: clamp(21px, 5vw, 30px);
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.wishes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    text-align: left;
+}
+
+.wish {
+    padding: 15px;
+    border-radius: 15px;
+    background: #ffffff0c;
+    border: 1px solid #ffffff15;
+    line-height: 1.8;
+    color: #ffe7f0;
+    font-size: 15px;
+}
+
+.wish b {
+    color: #ffe2a8;
+}
+
+#surprise {
+    display: none;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.falling {
+    position: fixed;
+    top: -45px;
+    z-index: 5;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110svh) rotate(480deg);
+        opacity: .1;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 60px 4px 45px;
+}
+
+.final-message {
+    border: 1px solid #ffe0a655;
+    background: linear-gradient(140deg, #ffffff12, #ff8fc016);
+    border-radius: 26px;
+    padding: clamp(20px, 5vw, 40px);
+    box-shadow: 0 0 35px #ff7bb522;
+}
+
+.final-message p {
+    font-size: 17px;
+}
+
+@media (max-width: 480px) {
+    main { width: 91%; }
+    .grid, .wishes { grid-template-columns: 1fr; }
+    .letter p { font-size: 16px; }
+    .eyebrow { letter-spacing: 2px; }
+    section { padding: 40px 0; }
+    .card { border-radius: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+<div id="sky"></div>
+
+<main>
+
+<header class="hero">
+    <div class="eyebrow">DUNYODAGI ENG AZIZ INSONIMGA</div>
+
+    <div class="flower">💐</div>
+
+    <h1>
+        Aziz
+        <span>Husnida onajonim ❤️</span>
+    </h1>
+
+    <p>
+        Siz uchun kichkina bir olam yaratdim.
+        Bu olamning har bir guli, har bir yulduzi
+        va har bir yurakchasi sizga bag‘ishlanadi.
+        🌹
+    </p>
+
+    <button class="btn" onclick="goTo('letter')">
+        Maktubimni o‘qing 💌
+    </button>
+
+    <p style="font-size:13px;color:#ffe1c9">
+        Shoshilmang, onajon. Bu sovg‘a siz uchun. ✨
+    </p>
+</header>
+
+<section id="letter">
+    <h2>💌 Yuragimdan chiqqan maktub</h2>
+    <p class="sub">Aziz Husnida onajonimga...</p>
+
+    <div class="card letter">
+        <p>Mehribon va qadrli onajonim!</p>
+
+        <p>
+            Sizga ushbu kichkina maktub orqali
+            yuragimdagi gaplarni aytmoqchiman.
+            Balki men ularni har kuni aytmasman,
+            lekin siz men uchun naqadar aziz
+            ekaningizni bilishingizni istayman.
+        </p>
+
+        <p>
+            Meni dunyoga keltirganingiz,
+            menga hayot berganingiz uchun
+            sizga cheksiz rahmat. Men ilk
+            qadamlarimni qo‘ygan paytimdan
+            boshlab, bugungi kungacha qilgan
+            mehnatlaringizni juda qadrlayman.
+        </p>
+
+        <p>
+            Men uchun qayg‘urganingiz,
+            xursandligimga sherik bo‘lganingiz,
+            xato qilsam to‘g‘ri yo‘l ko‘rsatganingiz
+            va doimo yaxshiligimni istaganingiz
+            uchun rahmat, onajon.
+        </p>
+
+        <p>
+            Ba'zan sizni xafa qilib qo‘yishim,
+            gaplaringizga darrov quloq solmasligim
+            yoki mehrimni yetarlicha ko‘rsata
+            olmasligim mumkin. Shunday paytlarda
+            meni kechiring. Men ham kundan kunga
+            yaxshiroq farzand bo‘lishni istayman.
+        </p>
+
+        <p>
+            Sizning tabassumingiz men uchun
+            katta quvonch. Sizning xursand
+            bo‘lishingiz, sog‘-salomat yurishingiz
+            va ko‘nglingiz tinch bo‘lishi
+            men uchun juda muhim.
+        </p>
+
+        <p>
+            Onajon, sizning mehringizni hech
+            qanday pul bilan sotib olib bo‘lmaydi.
+            Sizning o‘rningizni hech kim bosa
+            olmaydi. Siz borligingizning o‘zi
+            men uchun katta baxt.
+        </p>
+
+        <p>
+            Menga bergan tarbiyangiz,
+            sabringiz, maslahatlaringiz va
+            duolaringiz uchun rahmat.
+            Men sizni juda yaxshi ko‘raman,
+            Husnida onajonim! ❤️
+        </p>
+
+        <p class="signature">
+            Mehr bilan, farzandingiz. 💖
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Siz men uchun kimsiz? 🌷</h2>
+    <p class="sub">Sizni birgina so‘z bilan ta'riflab bo‘lmaydi.</p>
+
+    <div class="grid">
+        <div class="tile">
+            <div class="emoji">❤️</div>
+            <h3>Mehribonim</h3>
+            <p>Mehringiz uchun har kuni rahmat aytgim keladi.</p>
+        </div>
+
+        <div class="tile">
+            <div class="emoji">🏡</div>
+            <h3>Uyimning fayzi</h3>
+            <p>Siz bor joy menga eng iliq va aziz maskan.</p>
+        </div>
+
+        <div class="tile">
+            <div class="emoji">🌟</div>
+            <h3>Umidim</h3>
+            <p>Ishonchingiz menga oldinga yurish uchun kuch beradi.</p>
+        </div>
+
+        <div class="tile">
+            <div class="emoji">🤲</div>
+            <h3>Duolarim</h3>
+            <p>Sizga har doim ezgulik va xotirjamlik tilayman.</p>
+        </div>
+
+        <div class="tile">
+            <div class="emoji">🌹</div>
+            <h3>Qadrdonim</h3>
+            <p>Sizning borligingiz men uchun bebaho ne'mat.</p>
+        </div>
+
+        <div class="tile">
+            <div class="emoji">🕊️</div>
+            <h3>Oromim</h3>
+            <p>Sizning yoningizda ko‘nglim taskin topadi.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Husnida onajonim uchun gulzor 🌸</h2>
+
+    <div class="card">
+        <div class="garden">
+            🌹 🌷 🌸 💐<br>
+            🌺 🌼 🪻 🌻<br>
+            💐 🌷 🌹 🌸<br>
+            🌼 💖 🌺 💐
+        </div>
+
+        <p>
+            Afsuski, bu gullarni haqiqiy bog‘dan
+            uzib keltira olmadim. Ammo har birini
+            sizga bo‘lgan mehrim bilan tanladim. 💗
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Yulduzlar tilaklarimni aytsin ✨</h2>
+
+    <div class="card">
+        <div class="garden">🌙 ✨ 🌟 ✨ 🌙</div>
+
+        <p class="quote">
+            Har bir yulduz sizga baxt olib kelsin,
+            har bir tongingiz quvonch bilan otsin.
+        </p>
+
+        <p>
+            Ilohim, hayotingizda faqat yaxshi
+            yangiliklar, mehribon insonlar
+            va quvonchli kunlar ko‘p bo‘lsin.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Sizga 20 ta samimiy tilagim 💖</h2>
+
+    <p class="sub">Har biri chin yuragimdan.</p>
+
+    <div class="wishes" id="wishes"></div>
+</section>
+
+<section>
+    <h2>Kichkina sovg‘amni oching 🎁</h2>
+
+    <p class="sub">
+        Onajon, siz uchun yana bir xabar tayyorladim.
+    </p>
+
+    <div class="big-heart">💗</div>
+
+    <button class="btn" onclick="openGift()">
+        Sovg‘ani ochish ❤️
+    </button>
+
+    <div class="card" id="surprise">
+        <div class="flower">💐</div>
+
+        <h2>Husnida onajonim!</h2>
+
+        <p class="quote">
+            Siz dunyodagi eng qimmatli
+            sovg‘alardan birisiz!
+        </p>
+
+        <p>
+            Menga hayot berganingiz uchun rahmat.
+            Sizning farzandingiz ekanimdan
+            xursandman. Doimo sog‘ bo‘ling,
+            onajonim! ❤️
+        </p>
+
+        <button class="btn" onclick="celebrate()">
+            Yurakchalar yog‘ilsin! 💖
+        </button>
+    </div>
+</section>
+
+<section>
+    <h2>Yana bir bor rahmat, onajon 🤍</h2>
+
+    <div class="card">
+        <p>
+            Sizning barcha mehnatlaringizni
+            birgina sovg‘a bilan qaytarib
+            bo‘lmasligini bilaman.
+        </p>
+
+        <p>
+            Men sizni qimmatbaho narsalar bilan
+            emas, samimiy mehrim, yaxshi
+            ishlarim va hurmatim bilan
+            xursand qilishni istayman.
+        </p>
+
+        <div class="garden">❤️ 🌹 💐 🌷 ❤️</div>
+    </div>
+</section>
+
+<footer>
+    <div class="final-message">
+        <div class="flower">🌹</div>
+
+        <h2>Husnida onajonimga...</h2>
+
+        <p>
+            Onajon, tug‘ilgan kuningizga
+            hech narsa sovg‘a qila olmadim.
+            Kech bo‘lsa ham, siz uchun
+            mana shu kichkina saytni
+            o‘z qo‘llarim bilan yaratdim.
+        </p>
+
+        <p>
+            Bu sovg‘am qimmat bo‘lmasligi mumkin,
+            lekin ichidagi har bir so‘z
+            chin yuragimdan chiqdi.
+        </p>
+
+        <p>
+            Meni dunyoga keltirganingiz uchun,
+            mehr berganingiz uchun va
+            onam bo‘lganingiz uchun
+            katta rahmat! ❤️
+        </p>
+
+        <p class="quote">
+            Tug‘ilgan kuningiz muborak bo‘lsin,
+            Husnida onajonim! 💐
+        </p>
+
+        <div class="garden">💖 🌷 ❤️ 🌹 💖</div>
+
+        <p>
+            Sizni juda yaxshi ko‘radigan
+            farzandingizdan. 🥹❤️
+        </p>
+
+        <button class="btn" onclick="celebrate()">
+            Oxirgi sovg‘a: yurakchalar! 💗
+        </button>
+    </div>
+
+    <p style="font-size:13px;margin-top:30px">
+        Mehr bilan yaratilgan kichkina olam. ✨
+    </p>
+</footer>
+
+</main>
+
+<script>
+// Yulduzli osmon
+const sky = document.getElementById("sky");
+
+for (let i = 0; i < 120; i++) {
+    const star = document.createElement("span");
+    star.className = "star";
+    star.textContent = Math.random() > 0.5 ? "✦" : "·";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.fontSize = (7 + Math.random() * 14) + "px";
+    star.style.animationDelay = Math.random() * 4 + "s";
+    star.style.animationDuration = (1 + Math.random() * 3) + "s";
+    sky.appendChild(star);
+}
+
+// Sahifaga silliq o'tish
+function goTo(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Tilaklarni chiqarish
+const wishes = [
+    "Doimo sog‘-salomat bo‘ling.",
+    "Yuzingizdan tabassum arimasin.",
+    "Har kuningiz baxtli o‘tsin.",
+    "Barcha orzularingiz amalga oshsin.",
+    "Ko‘nglingiz doimo xotirjam bo‘lsin.",
+    "Uyingizdan fayz-baraka arimasin.",
+    "Yaxshi kunlarni ko‘p ko‘ring.",
+    "Mehringiz hamisha qadrlansin.",
+    "Atrofingiz yaxshi insonlarga to‘lsin.",
+    "Har tongingiz quvonch bilan boshlangan bo‘lsin.",
+    "Mehnatlaringizning rohatini ko‘ring.",
+    "Yaxshi niyatlaringiz amalga oshsin.",
+    "Doimo hurmat va e'tiborda bo‘ling.",
+    "Hayotingiz gullardek go‘zal bo‘lsin.",
+    "Qalbingizda g‘amdan ko‘ra quvonch ko‘p bo‘lsin.",
+    "Sizni xursand qiladigan xabarlar ko‘paysin.",
+    "Har doim o‘zingizni qadrlangan his qiling.",
+    "Yaqinlaringiz mehrini his qilib yuring.",
+    "Ko‘nglingizdagi ezgu tilaklar ijobat bo‘lsin.",
+    "Boshimizda doimo sog‘-salomat bo‘lib yuring!"
+];
+
+const wishesBox = document.getElementById("wishes");
+
+wishes.forEach((wish, index) => {
+    const item = document.createElement("div");
+    item.className = "wish";
+
+    const number = document.createElement("b");
+    number.textContent = String(index + 1).padStart(2, "0") + ". ";
+
+    item.appendChild(number);
+    item.appendChild(document.createTextNode(wish));
+    wishesBox.appendChild(item);
+});
+
+// Sovg‘a ochish
+function openGift() {
+    const surprise = document.getElementById("surprise");
+    surprise.style.display = "block";
+
+    surprise.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+    celebrate();
+}
+
+// Yurakchalar va gullar yomg‘iri
+function celebrate() {
+    const symbols = [
+        "❤️", "💖", "💕", "🌹",
+        "✨", "🌸", "💗", "🌷", "💐"
+    ];
+
+    for (let i = 0; i < 65; i++) {
+        setTimeout(() => {
+            const item = document.createElement("span");
+            item.className = "falling";
+
+            item.textContent = symbols[
+                Math.floor(Math.random() * symbols.length)
+            ];
+
+            item.style.left = Math.random() * 100 + "vw";
+            item.style.fontSize = (18 + Math.random() * 26) + "px";
+            item.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+            document.body.appendChild(item);
+
+            setTimeout(() => item.remove(), 7500);
+        }, i * 50);
+    }
+}
+
+// Sayt ochilganda kichkina yurakchalar
+window.addEventListener("load", () => {
+    for (let i = 0; i < 12; i++) {
+        setTimeout(() => {
+            const heart = document.createElement("span");
+            heart.className = "falling";
+            heart.textContent = "💗";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = "6s";
+
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }, i * 250);
+    }
+});
+</script>
+</body>
+</html>
+```
